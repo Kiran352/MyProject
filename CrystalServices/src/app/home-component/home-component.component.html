@@ -1,0 +1,105 @@
+<div class="row">
+   <div class="row" style="background-color:#008080 ;height: 250px;">
+       <div class="row" style="height: 100px;">
+        <h1> <img src="../assets/Logo.jpg" style="height: 100px;width: 400px; scroll-padding-left: 60px;"> 
+            <span style="padding-left: 110px;font-weight: bolder;color: ghostwhite;">
+                Crystal Services BCP Tracker</span></h1>
+       </div>
+       <br>
+       
+       <div class="row" style="height: 30px;">
+        <span style="padding-left: 40px;"></span>
+         <button class="bt-default" style="border: ivory;background-color:#008080 ;color: ivory;font-weight: bolder;border-right: ivory;">My Profile</button><span style="padding-left: 20px;"></span>
+         <button class="bt-default" style="border: ivory;background-color:#008080 ;color: ivory;font-weight: bolder;border-right: ivory;">My Activity</button><span style="padding-left: 20px;"></span>
+         <button class="bt-default" style="border: ivory;background-color:#008080 ;color: ivory;font-weight: bolder;border-right: ivory;">Support</button>
+       </div>
+       <div class="row" style="background-color: ivory; height: 60px;">
+               <div style="background-color:#008080 ;height: 30px;">
+                    <h3 style="padding-left: 600px;color: ivory;font-weight: bolder;">My Activity</h3>
+               </div>
+        </div>
+       
+    <div class="row" style="background-color:gainsboro;height: 620px;">
+       <div id="profile" style="border-width: 2px;height: 220px;background-color: rgb(242, 247, 246);padding-left: 40px;">
+      
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          
+              <div class="col-sm-4">
+        
+            <div class="form-group" style="padding-top: 10px;">
+                <label>BCP Start Date:</label>
+                 <input type="date" class="form-control" name="bcpdate" ngModel [(ngModel)]="start">
+               
+              </div>
+              <div class="form-group">
+                <label>BCP End Date:</label>
+                <input type="date" class="form-control" name="end"  disabled [(ngModel)]="start" ngModel>
+              </div>
+         </div>
+         <div class="col-sm-4">
+             
+             <div class="form-group" style="padding-top: 10px;">
+                <label >Employee Status:</label>
+                <select  name="emp_status" class="form-control" ngModel>
+                    <option value='Select'>Select</option>>
+                    <option value="holiday">Holiday</option>
+                    <option value="office">office</option>
+                    <option value="WFH">WFH</option>
+                  </select>
+              </div>
+              <div class="form-group">
+            <label>Comment</label>
+             <textarea class="form-control" name="comment" ngModel></textarea>
+              </div>
+              <button class="btn-primary" style="background-color:#008080;color: lightyellow;font-weight: bolder;" type="submit">Submit</button>
+              <span style="padding-left:20px;"></span><button style="background-color:#008080;color: lightyellow;font-weight: bolder;">Cancel</button>
+            </div>
+    
+            <div class="col-sm-3">
+             
+                <div class="form-group" style="padding-top: 10px;">
+                   <label >Employee Status:</label>
+                   <select id="cars" name="out_ageType" class="form-control" ngModel>
+                       <option value='Select'>Select</option>>
+                       <option value="internet">Internet</option>
+                       <option value="dongle">Dongle</option>
+                       <option value="other">Other</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+               <label>Outage time:</label>
+                <input type="text" class="form-control">
+                 </div>
+               </div>
+            
+              
+         </form>
+        
+        </div>
+        <div style="padding-left: 40px;" >
+          <table class="table" >
+
+              <th style="background-color:#008080 ;" *ngFor="let heading of headings">{{heading}}</th>
+            
+              <tr *ngFor="let tracker of trackers">
+                  <td><button><img src="../assets/edit.png" style="height: 20px;width: 20px;"></button></td>
+                  <td>{{tracker.bcpdate}}</td>
+                  <td>{{tracker.emp_status}}</td>
+                  <td>{{tracker.out_ageType}}</td>
+                  <td>{{tracker.comment}}</td>
+              </tr>
+          </table> 
+            
+            
+            
+        
+        
+        
+        </div>
+      
+       
+        
+    </div>
+    
+</div>
+</div>

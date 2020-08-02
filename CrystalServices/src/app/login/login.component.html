@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-6" style="background-color: darkcyan;height: 550px;">
+    <img src="../assets/Logo.jpg" class="center">
+    </div>
+    <div class="col-sm-6" style="background-color: darkorange;height: 550px;">
+      <div class="center1">
+        <h2>{{error}}</h2>
+        <h3 style="color: red;" *ngIf="show">UserName or Password is Wrong </h3>
+        
+        <label style="font-size: large;font-weight: bolder;">Login</label>
+        <form  (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label>Login Id:</label>
+            <input type="email" class="form-control" name="user_name" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" name="password" ngModel>
+          </div>
+          <button class="btn-primary" type="submit">Submit</button>
+        </form>
+        <router-outlet></router-outlet>
+      </div>
+      
+      
+      </div>
+    
